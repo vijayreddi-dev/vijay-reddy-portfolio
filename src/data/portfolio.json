@@ -1,17 +1,17 @@
 
 {
   "personal": {
-    "name": "Alex Johnson",
+    "name": "Vijay Reddy",
     "title": "Frontend Developer",
     "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
     "welcomeMessage": "Hello! I'm a passionate frontend developer who creates beautiful, responsive web experiences.",
     "about": "I'm a creative frontend developer with 3+ years of experience building modern web applications. I specialize in React, TypeScript, and creating pixel-perfect user interfaces that provide exceptional user experiences.",
-    "email": "alex.johnson@email.com",
+    "email": "vijay.reddy@email.com",
     "phone": "+1 (555) 123-4567",
     "location": "San Francisco, CA",
-    "github": "https://github.com/alexjohnson",
-    "linkedin": "https://linkedin.com/in/alexjohnson",
-    "portfolio": "https://alexjohnson.dev"
+    "github": "https://github.com/vijayreddy",
+    "linkedin": "https://linkedin.com/in/vijayreddy",
+    "portfolio": "https://vijayreddy.dev"
   },
   "techStack": [
     { "name": "React", "icon": "⚛️" },
