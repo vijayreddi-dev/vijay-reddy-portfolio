@@ -1,115 +1,128 @@
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import portfolioData from '../data/portfolio.json';
 
 const TechStackSection = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-    let animationId: number;
-    let scrollPosition = 0;
-    const scrollSpeed = 0.5; // Slower, smoother animation
+    const section = document.getElementById('tech');
+    if (section) {
+      observer.observe(section);
+    }
 
-    const animate = () => {
-      scrollPosition += scrollSpeed;
-      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
-        scrollPosition = 0;
-      }
-      scrollContainer.scrollLeft = scrollPosition;
-      animationId = requestAnimationFrame(animate);
-    };
-
-    // Start animation after a brief delay
-    const timer = setTimeout(() => {
-      animationId = requestAnimationFrame(animate);
-    }, 1000);
-
-    return () => {
-      if (animationId) {
-        cancelAnimationFrame(animationId);
-      }
-      clearTimeout(timer);
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="tech" className="py-12 md:py-20 bg-gradient-to-br from-indigo-50 to-blue-50 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 animate-fade-in">
-            Tech Stack
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 animate-fade-in">
-            Technologies I work with to create amazing experiences
+    <section id="tech" className="py-16 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute -bottom-32 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl animate-float" style={{ animationDelay: '4s' }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 relative">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                Tech Stack
+              </span>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-full transform scale-x-0 animate-scale-in" style={{ animationDelay: '0.5s' }}></div>
+            </h2>
+          </div>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            Technologies and tools I use to craft exceptional digital experiences
           </p>
         </div>
-        
-        <div className="relative overflow-hidden bg-white/30 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg">
-          {/* Gradient overlays for smooth fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
-          
-          <div
-            ref={scrollRef}
-            className="flex space-x-4 md:space-x-8 py-4 md:py-8 overflow-hidden"
-            style={{ 
-              width: 'fit-content',
-              scrollBehavior: 'smooth'
-            }}
-          >
-            {/* Duplicate the array multiple times for seamless infinite scroll */}
-            {[...portfolioData.techStack, ...portfolioData.techStack, ...portfolioData.techStack].map((tech, index) => (
-              <div
-                key={`${tech.name}-${index}`}
-                className="flex-shrink-0 bg-white rounded-xl p-3 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 min-w-[120px] md:min-w-[180px] lg:min-w-[200px] text-center group hover:scale-110 transform cursor-pointer animate-scale-in"
-                style={{
-                  animationDelay: `${(index % portfolioData.techStack.length) * 0.1}s`
-                }}
-              >
-                <div className="text-2xl md:text-3xl lg:text-4xl mb-2 md:mb-3 group-hover:animate-bounce transition-all duration-300 group-hover:scale-125">
+
+        {/* Tech Stack Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+          {portfolioData.techStack.map((tech, index) => (
+            <div
+              key={tech.name}
+              className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-white/20 ${
+                isVisible ? 'animate-scale-in' : 'opacity-0'
+              }`}
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                animationFillMode: 'forwards'
+              }}
+            >
+              {/* Gradient background on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-indigo-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              {/* Content */}
+              <div className="relative z-10 text-center">
+                <div className="text-3xl md:text-4xl mb-3 group-hover:animate-bounce transition-all duration-300 group-hover:scale-125">
                   {tech.icon}
                 </div>
-                <h3 className="font-semibold text-gray-800 text-sm md:text-base lg:text-lg group-hover:text-indigo-600 transition-colors duration-300">
+                <h3 className="font-semibold text-gray-800 text-sm md:text-base group-hover:text-blue-600 transition-colors duration-300">
                   {tech.name}
                 </h3>
-                {/* Animated border on hover */}
-                <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-indigo-200 transition-colors duration-300"></div>
               </div>
-            ))}
+
+              {/* Animated border */}
+              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-200 transition-colors duration-300"></div>
+              
+              {/* Shine effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Floating Tech Icons Animation */}
+        <div className="mt-16 relative h-20 overflow-hidden rounded-2xl bg-white/30 backdrop-blur-sm border border-white/20">
+          <div className="absolute inset-0 flex items-center">
+            <div className="flex animate-scroll-infinite space-x-8 whitespace-nowrap">
+              {/* First set */}
+              {portfolioData.techStack.map((tech, index) => (
+                <div key={`scroll-1-${index}`} className="flex items-center space-x-2 text-gray-700 font-medium">
+                  <span className="text-2xl">{tech.icon}</span>
+                  <span className="text-lg">{tech.name}</span>
+                </div>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {portfolioData.techStack.map((tech, index) => (
+                <div key={`scroll-2-${index}`} className="flex items-center space-x-2 text-gray-700 font-medium">
+                  <span className="text-2xl">{tech.icon}</span>
+                  <span className="text-lg">{tech.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
           
-          {/* Floating particles effect */}
-          <div className="absolute inset-0 pointer-events-none">
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-1 h-1 bg-indigo-300 rounded-full animate-pulse opacity-40"
-                style={{
-                  left: `${20 + i * 15}%`,
-                  top: `${30 + (i % 2) * 40}%`,
-                  animationDelay: `${i * 0.5}s`,
-                  animationDuration: `${2 + i}s`
-                }}
-              ></div>
-            ))}
-          </div>
+          {/* Gradient overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white/80 to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white/80 to-transparent z-10"></div>
         </div>
-        
-        {/* Bottom decorative elements */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {[...Array(3)].map((_, i) => (
-            <div
-              key={i}
-              className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"
-              style={{
-                animationDelay: `${i * 0.2}s`,
-                animationDuration: '1.5s'
-              }}
-            ></div>
-          ))}
+
+        {/* Stats or Additional Info */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 animate-fade-in" style={{ animationDelay: '1s' }}>
+            <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">{portfolioData.techStack.length}+</div>
+            <div className="text-gray-600">Technologies</div>
+          </div>
+          <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 animate-fade-in" style={{ animationDelay: '1.2s' }}>
+            <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-2">3+</div>
+            <div className="text-gray-600">Years Experience</div>
+          </div>
+          <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 animate-fade-in" style={{ animationDelay: '1.4s' }}>
+            <div className="text-2xl md:text-3xl font-bold text-indigo-600 mb-2">∞</div>
+            <div className="text-gray-600">Learning Journey</div>
+          </div>
         </div>
       </div>
     </section>

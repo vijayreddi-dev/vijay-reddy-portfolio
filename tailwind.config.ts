@@ -128,6 +128,14 @@ export default {
 					'100%': {
 						backgroundPosition: '200% 0'
 					}
+				},
+				'scroll-infinite': {
+					'0%': {
+						transform: 'translateX(0)'
+					},
+					'100%': {
+						transform: 'translateX(-50%)'
+					}
 				}
 			},
 			animation: {
@@ -137,7 +145,8 @@ export default {
 				'scale-in': 'scale-in 0.2s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite',
-				'shimmer': 'shimmer 2s linear infinite'
+				'shimmer': 'shimmer 2s linear infinite',
+				'scroll-infinite': 'scroll-infinite 20s linear infinite'
 			}
 		}
 	},
