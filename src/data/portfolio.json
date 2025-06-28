@@ -1,0 +1,117 @@
+
+{
+  "personal": {
+    "name": "Alex Johnson",
+    "title": "Frontend Developer",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    "welcomeMessage": "Hello! I'm a passionate frontend developer who creates beautiful, responsive web experiences.",
+    "about": "I'm a creative frontend developer with 3+ years of experience building modern web applications. I specialize in React, TypeScript, and creating pixel-perfect user interfaces that provide exceptional user experiences.",
+    "email": "alex.johnson@email.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "San Francisco, CA",
+    "github": "https://github.com/alexjohnson",
+    "linkedin": "https://linkedin.com/in/alexjohnson",
+    "portfolio": "https://alexjohnson.dev"
+  },
+  "techStack": [
+    { "name": "React", "icon": "⚛️" },
+    { "name": "TypeScript", "icon": "📘" },
+    { "name": "JavaScript", "icon": "🟨" },
+    { "name": "Next.js", "icon": "▲" },
+    { "name": "Tailwind CSS", "icon": "🎨" },
+    { "name": "Node.js", "icon": "🟢" },
+    { "name": "Git", "icon": "📚" },
+    { "name": "Figma", "icon": "🎭" },
+    { "name": "HTML5", "icon": "🌐" },
+    { "name": "CSS3", "icon": "💎" },
+    { "name": "Vue.js", "icon": "💚" },
+    { "name": "Sass", "icon": "🎀" }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "company": "TechCorp Solutions",
+      "position": "Senior Frontend Developer",
+      "duration": "2022 - Present",
+      "description": "Lead frontend development for multiple client projects, mentoring junior developers and implementing modern React applications with TypeScript.",
+      "technologies": ["React", "TypeScript", "Next.js", "Tailwind CSS"]
+    },
+    {
+      "id": 2,
+      "company": "Digital Agency Pro",
+      "position": "Frontend Developer",
+      "duration": "2021 - 2022",
+      "description": "Developed responsive web applications and collaborated with designers to create pixel-perfect implementations.",
+      "technologies": ["React", "JavaScript", "Sass", "Vue.js"]
+    },
+    {
+      "id": 3,
+      "company": "StartupHub",
+      "position": "Junior Frontend Developer",
+      "duration": "2020 - 2021",
+      "description": "Built user interfaces for web applications and gained experience with modern frontend frameworks and tools.",
+      "technologies": ["HTML5", "CSS3", "JavaScript", "React"]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Dashboard",
+      "description": "A comprehensive admin dashboard for managing e-commerce operations with real-time analytics and inventory management.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+      "technologies": ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
+      "liveUrl": "#",
+      "githubUrl": "#"
+    },
+    {
+      "id": 2,
+      "title": "Weather App",
+      "description": "A beautiful weather application with location-based forecasts, animated icons, and responsive design.",
+      "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop",
+      "technologies": ["React", "CSS3", "OpenWeather API", "Framer Motion"],
+      "liveUrl": "#",
+      "githubUrl": "#"
+    },
+    {
+      "id": 3,
+      "title": "Task Management Tool",
+      "description": "A collaborative task management application with drag-and-drop functionality and team collaboration features.",
+      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
+      "technologies": ["Next.js", "TypeScript", "Prisma", "Tailwind CSS"],
+      "liveUrl": "#",
+      "githubUrl": "#"
+    },
+    {
+      "id": 4,
+      "title": "Portfolio Website",
+      "description": "A modern, responsive portfolio website showcasing projects and skills with smooth animations and clean design.",
+      "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
+      "technologies": ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+      "liveUrl": "#",
+      "githubUrl": "#"
+    }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "name": "React Developer Certification",
+      "issuer": "Meta",
+      "date": "2023",
+      "credentialUrl": "#"
+    },
+    {
+      "id": 2,
+      "name": "Frontend Web Development",
+      "issuer": "freeCodeCamp",
+      "date": "2022",
+      "credentialUrl": "#"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript Algorithms and Data Structures",
+      "issuer": "freeCodeCamp",
+      "date": "2021",
+      "credentialUrl": "#"
+    }
+  ]
+}
