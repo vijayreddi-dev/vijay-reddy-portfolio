@@ -103,3 +103,41 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom ultra-thin scrollbar */
+::-webkit-scrollbar {
+  width: 0.5px;
+  height: 0.5px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(222, 14%, 80%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(222, 14%, 80%) transparent;
+}
+
+/* Hide scrollbar globally */
+::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none;
+}
+html {
+  scrollbar-width: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}

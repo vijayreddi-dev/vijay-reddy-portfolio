@@ -51,10 +51,12 @@
       "title": "Avery (SurgeVentures)",
       "description": "Compliance platform that helps over 50 organizations meet business regulations, led frontend development, and improved delivery time by 30%.",
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      "technologies": ["React.js", "JavaScript", "SQL"],
+      "technologies": ["React.js", "TypeScript", "NestJS","PostgreSQL"],
       "liveUrl": "#",
       "githubUrl": "#",
-      "type": "real-time"
+      "type": "real-time",
+      "showLiveDemo": false,
+      "showSourceCode": false
     },
     {
       "id": 3,
@@ -64,7 +66,9 @@
       "technologies": ["React.js", "JavaScript"],
       "liveUrl": "#",
       "githubUrl": "#",
-      "type": "real-time"
+      "type": "real-time",
+      "showLiveDemo": false,
+      "showSourceCode": false
     },
     {
       "id": 4,
@@ -74,7 +78,9 @@
       "technologies": ["React.js", "JavaScript"],
       "liveUrl": "#",
       "githubUrl": "#",
-      "type": "real-time"
+      "type": "real-time",
+      "showLiveDemo": false,
+      "showSourceCode": false
     },
     {
       "id": 5,
@@ -84,7 +90,9 @@
       "technologies": ["React.js", "JavaScript"],
       "liveUrl": "#",
       "githubUrl": "#",
-      "type": "real-time"
+      "type": "real-time",
+      "showLiveDemo": false,
+      "showSourceCode": false
     },
     {
       "id": 6,
@@ -94,7 +102,9 @@
       "technologies": ["React.js", "JavaScript", "CSS3"],
       "liveUrl": "https://zomato-front.vercel.app/",
       "githubUrl": "#",
-      "type": "personal"
+      "type": "personal",
+      "showLiveDemo": true,
+      "showSourceCode": true
     },
     {
       "id": 7,
@@ -104,7 +114,9 @@
       "technologies": ["React.js", "JavaScript", "CSS3"],
       "liveUrl": "https://tasky-gamma.vercel.app/",
       "githubUrl": "#",
-      "type": "personal"
+      "type": "personal",
+      "showLiveDemo": true,
+      "showSourceCode": true
     }
   ],
   "certifications": [

@@ -38,7 +38,7 @@ const TechStackSection = () => {
     const now = new Date();
     return now.getFullYear() - minYear + 1;
   };
-  const yearsOfExperience = portfolioData.personal.totalExperience || getYearsOfExperience();
+  const yearsOfExperience = portfolioData.personal?.totalExperience || getYearsOfExperience();
 
   return (
     <section id="tech" className="py-16 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
@@ -67,7 +67,7 @@ const TechStackSection = () => {
 
         {/* Tech Stack Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
-          {portfolioData.techStack.map((tech, index) => (
+          {portfolioData.techStack?.map((tech, index) => (
             <div
               key={tech.name}
               className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-white/20 ${
@@ -109,7 +109,7 @@ const TechStackSection = () => {
           <div className="absolute inset-0 flex items-center">
             <div className="flex animate-scroll-infinite space-x-8 whitespace-nowrap">
               {/* First set */}
-              {portfolioData.techStack.map((tech, index) => (
+              {portfolioData.techStack?.map((tech, index) => (
                 <div key={`scroll-1-${index}`} className="flex items-center space-x-2 text-gray-700 font-medium">
                   <span className="text-2xl" style={{ display: 'inline-block', minWidth: 32, minHeight: 32 }}>
                     {typeof tech.icon === 'string' && tech.icon.startsWith('/') ? (
@@ -122,7 +122,7 @@ const TechStackSection = () => {
                 </div>
               ))}
               {/* Duplicate for seamless loop */}
-              {portfolioData.techStack.map((tech, index) => (
+              {portfolioData.techStack?.map((tech, index) => (
                 <div key={`scroll-2-${index}`} className="flex items-center space-x-2 text-gray-700 font-medium">
                   <span className="text-2xl" style={{ display: 'inline-block', minWidth: 32, minHeight: 32 }}>
                     {typeof tech.icon === 'string' && tech.icon.startsWith('/') ? (
@@ -145,7 +145,7 @@ const TechStackSection = () => {
         {/* Stats or Additional Info */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 animate-fade-in" style={{ animationDelay: '1s' }}>
-            <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">{portfolioData.techStack.length}+</div>
+            <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">{portfolioData.techStack?.length}+</div>
             <div className="text-gray-600">Technologies</div>
           </div>
           <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 animate-fade-in" style={{ animationDelay: '1.2s' }}>
