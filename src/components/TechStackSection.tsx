@@ -23,6 +23,23 @@ const TechStackSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Calculate years of experience from portfolioData
+  const getYearsOfExperience = () => {
+    const experiences = portfolioData.experience;
+    if (!experiences || experiences.length === 0) return 0;
+    // Find the earliest start year
+    const years = experiences.map(exp => {
+      // Try to extract year from duration string (e.g., 'Jan 2023 - Present' or 'Jun 2021 - Sep 2021')
+      const match = exp.duration.match(/(\d{4})/);
+      return match ? parseInt(match[1], 10) : null;
+    }).filter(Boolean);
+    if (years.length === 0) return 0;
+    const minYear = Math.min(...years);
+    const now = new Date();
+    return now.getFullYear() - minYear + 1;
+  };
+  const yearsOfExperience = portfolioData.personal.totalExperience || getYearsOfExperience();
+
   return (
     <section id="tech" className="py-16 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -67,7 +84,11 @@ const TechStackSection = () => {
               {/* Content */}
               <div className="relative z-10 text-center">
                 <div className="text-3xl md:text-4xl mb-3 group-hover:animate-bounce transition-all duration-300 group-hover:scale-125">
-                  {tech.icon}
+                  {typeof tech.icon === 'string' && tech.icon.startsWith('/') ? (
+                    <img src={tech.icon} alt={tech.name + ' icon'} className="w-8 h-8 mx-auto" />
+                  ) : (
+                    tech.icon
+                  )}
                 </div>
                 <h3 className="font-semibold text-gray-800 text-sm md:text-base group-hover:text-blue-600 transition-colors duration-300">
                   {tech.name}
@@ -90,14 +111,26 @@ const TechStackSection = () => {
               {/* First set */}
               {portfolioData.techStack.map((tech, index) => (
                 <div key={`scroll-1-${index}`} className="flex items-center space-x-2 text-gray-700 font-medium">
-                  <span className="text-2xl">{tech.icon}</span>
+                  <span className="text-2xl" style={{ display: 'inline-block', minWidth: 32, minHeight: 32 }}>
+                    {typeof tech.icon === 'string' && tech.icon.startsWith('/') ? (
+                      <img src={tech.icon} alt={tech.name + ' icon'} style={{ display: 'inline', verticalAlign: 'middle', width: 32, height: 32 }} />
+                    ) : (
+                      tech.icon
+                    )}
+                  </span>
                   <span className="text-lg">{tech.name}</span>
                 </div>
               ))}
               {/* Duplicate for seamless loop */}
               {portfolioData.techStack.map((tech, index) => (
                 <div key={`scroll-2-${index}`} className="flex items-center space-x-2 text-gray-700 font-medium">
-                  <span className="text-2xl">{tech.icon}</span>
+                  <span className="text-2xl" style={{ display: 'inline-block', minWidth: 32, minHeight: 32 }}>
+                    {typeof tech.icon === 'string' && tech.icon.startsWith('/') ? (
+                      <img src={tech.icon} alt={tech.name + ' icon'} style={{ display: 'inline', verticalAlign: 'middle', width: 32, height: 32 }} />
+                    ) : (
+                      tech.icon
+                    )}
+                  </span>
                   <span className="text-lg">{tech.name}</span>
                 </div>
               ))}
@@ -116,7 +149,7 @@ const TechStackSection = () => {
             <div className="text-gray-600">Technologies</div>
           </div>
           <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 animate-fade-in" style={{ animationDelay: '1.2s' }}>
-            <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-2">3+</div>
+            <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-2">{yearsOfExperience}</div>
             <div className="text-gray-600">Years Experience</div>
           </div>
           <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 animate-fade-in" style={{ animationDelay: '1.4s' }}>

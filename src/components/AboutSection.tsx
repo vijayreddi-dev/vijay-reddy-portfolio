@@ -25,7 +25,7 @@ const AboutSection = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-800">{portfolioData.personal.title}</h3>
-                <p className="text-gray-600">3+ Years Experience</p>
+                <p className="text-gray-600">2.5+ Years Experience</p>
               </div>
             </div>
           </div>
