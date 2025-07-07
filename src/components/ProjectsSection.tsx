@@ -32,9 +32,18 @@ const ProjectsSection = () => {
             {portfolioData.projects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:scale-105 transform cursor-pointer"
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:scale-105 transform cursor-pointer relative"
                 onClick={() => handleProjectClick(project)}
               >
+                {/* Project Type Badge */}
+                {project.type && (
+                  <span
+                    className={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold z-20
+                      ${project.type === 'real-time' ? 'bg-blue-100 text-blue-700 border border-blue-200' : 'bg-purple-100 text-purple-700 border border-purple-200'}`}
+                  >
+                    {project.type === 'real-time' ? 'Real-Time Project' : 'Personal Project'}
+                  </span>
+                )}
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}

@@ -53,16 +53,8 @@
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
       "technologies": ["React.js", "JavaScript", "SQL"],
       "liveUrl": "#",
-      "githubUrl": "#"
-    },
-    {
-      "id": 2,
-      "title": "B2B2C MVP",
-      "description": "Travel MVP for browsing and booking flights and hotels, increased user engagement by 20% during testing.",
-      "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop",
-      "technologies": ["React.js", "JavaScript"],
-      "liveUrl": "#",
-      "githubUrl": "#"
+      "githubUrl": "#",
+      "type": "real-time"
     },
     {
       "id": 3,
@@ -71,7 +63,8 @@
       "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
       "technologies": ["React.js", "JavaScript"],
       "liveUrl": "#",
-      "githubUrl": "#"
+      "githubUrl": "#",
+      "type": "real-time"
     },
     {
       "id": 4,
@@ -80,7 +73,8 @@
       "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
       "technologies": ["React.js", "JavaScript"],
       "liveUrl": "#",
-      "githubUrl": "#"
+      "githubUrl": "#",
+      "type": "real-time"
     },
     {
       "id": 5,
@@ -89,16 +83,18 @@
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
       "technologies": ["React.js", "JavaScript"],
       "liveUrl": "#",
-      "githubUrl": "#"
+      "githubUrl": "#",
+      "type": "real-time"
     },
     {
       "id": 6,
       "title": "Zomato Frontend Clone",
       "description": "Built during internship to enhance skills in React.js and responsive design.",
-      "image": "https://images.unsplash.com/photo-1606761565734-380c4d7bb28d?w=500&h=300&fit=crop",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
       "technologies": ["React.js", "JavaScript", "CSS3"],
       "liveUrl": "https://zomato-front.vercel.app/",
-      "githubUrl": "#"
+      "githubUrl": "#",
+      "type": "personal"
     },
     {
       "id": 7,
@@ -107,7 +103,8 @@
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
       "technologies": ["React.js", "JavaScript", "CSS3"],
       "liveUrl": "https://tasky-gamma.vercel.app/",
-      "githubUrl": "#"
+      "githubUrl": "#",
+      "type": "personal"
     }
   ],
   "certifications": [
