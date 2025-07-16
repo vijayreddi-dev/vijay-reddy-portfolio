@@ -1,6 +1,7 @@
 
 import { X, ExternalLink, Github, Calendar, Code, Zap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import portfolioData from '../data/portfolio.json';
 
 interface Project {
   id: number;
@@ -10,6 +11,8 @@ interface Project {
   technologies: string[];
   liveUrl: string;
   githubUrl: string;
+  showLiveDemo?: boolean; // Added for conditional rendering
+  showSourceCode?: boolean; // Added for conditional rendering
 }
 
 interface ProjectDetailProps {
@@ -29,7 +32,7 @@ const ProjectDetail = ({ project, onClose }: ProjectDetailProps) => {
       className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
       onClick={handleBackdropClick}
     >
-      <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-in">
+      <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-in no-scrollbar">
         {/* Header */}
         <div className="relative">
           <img
@@ -78,29 +81,24 @@ const ProjectDetail = ({ project, onClose }: ProjectDetailProps) => {
               Technologies Used
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {project.technologies.map((tech) => (
-                <Card key={tech} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-4 text-center">
-                    <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-2xl">
-                        {tech === 'React' && '⚛️'}
-                        {tech === 'TypeScript' && '📘'}
-                        {tech === 'JavaScript' && '🟨'}
-                        {tech === 'Next.js' && '▲'}
-                        {tech === 'Tailwind CSS' && '🎨'}
-                        {tech === 'CSS3' && '💎'}
-                        {tech === 'Chart.js' && '📊'}
-                        {tech === 'OpenWeather API' && '🌤️'}
-                        {tech === 'Framer Motion' && '✨'}
-                        {tech === 'Prisma' && '🔷'}
-                        {tech === 'Vite' && '⚡'}
-                        {!['React', 'TypeScript', 'JavaScript', 'Next.js', 'Tailwind CSS', 'CSS3', 'Chart.js', 'OpenWeather API', 'Framer Motion', 'Prisma', 'Vite'].includes(tech) && '🔧'}
-                      </span>
-                    </div>
-                    <span className="text-sm font-medium text-gray-700">{tech}</span>
-                  </CardContent>
-                </Card>
-              ))}
+              {project.technologies.map((tech) => {
+                // Find icon from techStack
+                const techStackIcon = portfolioData.techStack?.find(t => t.name.toLowerCase() === tech.toLowerCase() || t.name.replace(/\s/g, '').toLowerCase() === tech.replace(/\s/g, '').toLowerCase());
+                return (
+                  <Card key={tech} className="hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4 text-center">
+                      <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                        {techStackIcon && typeof techStackIcon.icon === 'string' && techStackIcon.icon.startsWith('/') ? (
+                          <img src={techStackIcon.icon} alt={tech + ' icon'} title={tech} className="w-8 h-8 mx-auto" />
+                        ) : (
+                          <span className="text-2xl">🔧</span>
+                        )}
+                      </div>
+                      <span className="text-sm font-medium text-gray-700">{tech}</span>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
 
@@ -129,20 +127,28 @@ const ProjectDetail = ({ project, onClose }: ProjectDetailProps) => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={project.liveUrl}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex-1"
-            >
-              <ExternalLink size={20} />
-              <span className="font-medium">View Live Demo</span>
-            </a>
-            <a
-              href={project.githubUrl}
-              className="flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors flex-1"
-            >
-              <Github size={20} />
-              <span className="font-medium">View Source Code</span>
-            </a>
+            {project.showLiveDemo && (
+              <a
+                href={project.liveUrl}
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink size={20} />
+                <span className="font-medium">View Live Demo</span>
+              </a>
+            )}
+            {project.showSourceCode && (
+              <a
+                href={project.githubUrl}
+                className="flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors flex-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github size={20} />
+                <span className="font-medium">View Source Code</span>
+              </a>
+            )}
           </div>
         </div>
       </div>

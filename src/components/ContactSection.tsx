@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Award } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
 
 const ContactSection = () => {
@@ -27,7 +27,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-gray-300">Email</p>
-                  <p className="text-lg font-medium">{portfolioData.personal.email}</p>
+                  <p className="text-lg font-medium">{portfolioData.personal?.email}</p>
                 </div>
               </div>
 
@@ -37,7 +37,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-gray-300">Phone</p>
-                  <p className="text-lg font-medium">{portfolioData.personal.phone}</p>
+                  <p className="text-lg font-medium">{portfolioData.personal?.phone}</p>
                 </div>
               </div>
 
@@ -47,29 +47,27 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-gray-300">Location</p>
-                  <p className="text-lg font-medium">{portfolioData.personal.location}</p>
+                  <p className="text-lg font-medium">{portfolioData.personal?.location}</p>
                 </div>
               </div>
             </div>
 
             <div className="flex space-x-4 pt-6">
               <a
-                href={portfolioData.personal.github}
+                href={portfolioData.personal?.github}
                 className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Github size={20} />
               </a>
               <a
-                href={portfolioData.personal.linkedin}
+                href={portfolioData.personal?.linkedin}
                 className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Linkedin size={20} />
-              </a>
-              <a
-                href={portfolioData.personal.portfolio}
-                className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors"
-              >
-                <ExternalLink size={20} />
               </a>
             </div>
           </div>
@@ -77,21 +75,26 @@ const ContactSection = () => {
           {/* Certifications */}
           <div>
             <h3 className="text-2xl font-bold mb-6">Certifications</h3>
-            <div className="space-y-4">
-              {portfolioData.certifications.map((cert) => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+              {portfolioData.certifications?.map((cert) => (
                 <div
-                  key={cert.id}
-                  className="bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition-colors"
+                  key={cert?.id}
+                  className="bg-gray-800 border border-indigo-500/40 rounded-xl flex flex-col items-center text-center p-4 shadow-md hover:shadow-lg transition-all group"
                 >
-                  <h4 className="text-lg font-semibold mb-2">{cert.name}</h4>
-                  <p className="text-indigo-400 mb-2">{cert.issuer}</p>
-                  <p className="text-gray-400 text-sm mb-3">{cert.date}</p>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-indigo-600/20 mb-3 group-hover:bg-indigo-600/40 transition-colors">
+                    <Award size={28} className="text-indigo-400" />
+                  </div>
+                  <h4 className="text-base font-bold text-white mb-1 truncate w-full" title={cert?.name}>{cert?.name}</h4>
+                  <p className="text-xs text-indigo-300 mb-2 truncate w-full" title={cert?.issuer}>{cert?.issuer}</p>
+                  <p className="text-xs text-gray-400 mb-3">{cert?.date}</p>
                   <a
-                    href={cert.credentialUrl}
-                    className="inline-flex items-center space-x-2 text-indigo-400 hover:text-indigo-300 transition-colors"
+                    href={cert?.credentialUrl}
+                    className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold hover:bg-indigo-500/40 hover:text-white transition-colors inline-flex items-center space-x-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <span>View Credential</span>
-                    <ExternalLink size={16} />
+                    <span>Credential</span>
+                    <ExternalLink size={13} />
                   </a>
                 </div>
               ))}
@@ -101,7 +104,7 @@ const ContactSection = () => {
 
         <div className="text-center mt-12 pt-8 border-t border-gray-800">
           <p className="text-gray-400">
-            © 2024 {portfolioData.personal.name}. Built with React & Tailwind CSS.
+            © 2024 {portfolioData.personal?.name}. Built with React & Tailwind CSS.
           </p>
         </div>
       </div>

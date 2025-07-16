@@ -1,117 +1,152 @@
-
 {
   "personal": {
     "name": "Vijay Reddy",
     "title": "Frontend Developer",
     "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-    "welcomeMessage": "Hello! I'm a passionate frontend developer who creates beautiful, responsive web experiences.",
-    "about": "I'm a creative frontend developer with 3+ years of experience building modern web applications. I specialize in React, TypeScript, and creating pixel-perfect user interfaces that provide exceptional user experiences.",
-    "email": "vijay.reddy@email.com",
-    "phone": "+1 (555) 123-4567",
-    "location": "San Francisco, CA",
-    "github": "https://github.com/vijayreddy",
-    "linkedin": "https://linkedin.com/in/vijayreddy",
-    "portfolio": "https://vijayreddy.dev"
+    "welcomeMessage": "Hello! I'm a passionate frontend developer who creates dynamic and responsive web applications.",
+    "about": "Frontend Developer with 2.5+ years of experience specializing in React.js, JavaScript, HTML, and CSS. Proven track record delivering real-time projects in domains like travel, hotel booking, employee management, and compliance platforms.",
+    "email": "padegapativijay@gmail.com",
+    "phone": "+91 9010498408",
+    "location": "Pune, India",
+    "github": "https://github.com/vijayreddi",
+    "linkedin": "https://www.linkedin.com/in/vijay-reddy-padegapati-12122001vj/",
+    "portfolio": "https://zomato-front.vercel.app/",
+    "totalExperience": "2.7+"
   },
   "techStack": [
-    { "name": "React", "icon": "⚛️" },
-    { "name": "TypeScript", "icon": "📘" },
-    { "name": "JavaScript", "icon": "🟨" },
-    { "name": "Next.js", "icon": "▲" },
-    { "name": "Tailwind CSS", "icon": "🎨" },
-    { "name": "Node.js", "icon": "🟢" },
-    { "name": "Git", "icon": "📚" },
-    { "name": "Figma", "icon": "🎭" },
-    { "name": "HTML5", "icon": "🌐" },
-    { "name": "CSS3", "icon": "💎" },
-    { "name": "Vue.js", "icon": "💚" },
-    { "name": "Sass", "icon": "🎀" }
+    { "name": "React.js", "icon": "/react.svg" },
+    { "name": "JavaScript", "icon": "/JavaScript.svg" },
+    { "name": "TypeScript", "icon": "/typescript.svg" },
+    { "name": "NestJS", "icon": "/nestjs.svg" },
+    { "name": "PostgreSQL", "icon": "/postgresql.svg" },
+    { "name": "Git", "icon": "/git.svg" },
+    { "name": "Postman", "icon": "/postman.svg" },
+    { "name": "HTML5", "icon": "/html-5.svg" },
+    { "name": "CSS3", "icon": "/css.svg" },
+    { "name": "SCSS", "icon": "/sass.svg" },
+    { "name": "Bootstrap", "icon": "/bootstrap.svg" },
+    { "name": "Material UI", "icon": "/materialUI.svg" }
   ],
   "experience": [
     {
       "id": 1,
-      "company": "TechCorp Solutions",
-      "position": "Senior Frontend Developer",
-      "duration": "2022 - Present",
-      "description": "Lead frontend development for multiple client projects, mentoring junior developers and implementing modern React applications with TypeScript.",
-      "technologies": ["React", "TypeScript", "Next.js", "Tailwind CSS"]
+      "company": "Indexnine Technologies",
+      "position": "Software Engineer",
+      "duration": "Jan 2023 - Present",
+      "description": "Leading frontend development for real-time projects in travel, compliance, and employee management. Handling client interactions, forming user stories, developing screens, and supporting backend tasks.",
+      "technologies": ["React.js", "JavaScript", "SQL", "MongoDB"]
     },
     {
       "id": 2,
-      "company": "Digital Agency Pro",
-      "position": "Frontend Developer",
-      "duration": "2021 - 2022",
-      "description": "Developed responsive web applications and collaborated with designers to create pixel-perfect implementations.",
-      "technologies": ["React", "JavaScript", "Sass", "Vue.js"]
-    },
-    {
-      "id": 3,
-      "company": "StartupHub",
-      "position": "Junior Frontend Developer",
-      "duration": "2020 - 2021",
-      "description": "Built user interfaces for web applications and gained experience with modern frontend frameworks and tools.",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "React"]
+      "company": "Shape AI",
+      "position": "Software Engineer Intern",
+      "duration": "Jun 2021 - Sep 2021",
+      "description": "Built and deployed Zomato frontend clone, developed Tasky task management app, and participated in full-stack assignments to gain practical frontend and backend experience.",
+      "technologies": ["React.js", "JavaScript", "HTML5", "CSS3"]
     }
   ],
   "projects": [
     {
       "id": 1,
-      "title": "E-Commerce Dashboard",
-      "description": "A comprehensive admin dashboard for managing e-commerce operations with real-time analytics and inventory management.",
+      "title": "Avery (SurgeVentures)",
+      "description": "Compliance platform that helps over 50 organizations meet business regulations, led frontend development, and improved delivery time by 30%.",
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      "technologies": ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
+      "technologies": ["React.js", "TypeScript", "NestJS","PostgreSQL"],
       "liveUrl": "#",
-      "githubUrl": "#"
-    },
-    {
-      "id": 2,
-      "title": "Weather App",
-      "description": "A beautiful weather application with location-based forecasts, animated icons, and responsive design.",
-      "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop",
-      "technologies": ["React", "CSS3", "OpenWeather API", "Framer Motion"],
-      "liveUrl": "#",
-      "githubUrl": "#"
+      "githubUrl": "#",
+      "type": "real-time",
+      "showLiveDemo": false,
+      "showSourceCode": false
     },
     {
       "id": 3,
-      "title": "Task Management Tool",
-      "description": "A collaborative task management application with drag-and-drop functionality and team collaboration features.",
+      "title": "Jackeye",
+      "description": "Portal for agents to securely manage credentials, reduced login time by 40% and improved booking efficiency by 25%.",
       "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
-      "technologies": ["Next.js", "TypeScript", "Prisma", "Tailwind CSS"],
+      "technologies": ["React.js", "JavaScript"],
       "liveUrl": "#",
-      "githubUrl": "#"
+      "githubUrl": "#",
+      "type": "real-time",
+      "showLiveDemo": false,
+      "showSourceCode": false
     },
     {
       "id": 4,
-      "title": "Portfolio Website",
-      "description": "A modern, responsive portfolio website showcasing projects and skills with smooth animations and clean design.",
+      "title": "Techforops",
+      "description": "Developed amendment and monitoring screens to enhance agent workflow and reduce incorrect assignments by 25%.",
       "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
-      "technologies": ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+      "technologies": ["React.js", "JavaScript"],
       "liveUrl": "#",
-      "githubUrl": "#"
+      "githubUrl": "#",
+      "type": "real-time",
+      "showLiveDemo": false,
+      "showSourceCode": false
+    },
+    {
+      "id": 5,
+      "title": "Arena9",
+      "description": "Frontend for Employee Management System tracking over 500 employees, improved UI satisfaction by 15%.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+      "technologies": ["React.js", "JavaScript"],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "type": "real-time",
+      "showLiveDemo": false,
+      "showSourceCode": false
+    },
+    {
+      "id": 6,
+      "title": "Zomato Frontend Clone",
+      "description": "Built during internship to enhance skills in React.js and responsive design.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+      "technologies": ["React.js", "JavaScript", "CSS3"],
+      "liveUrl": "https://zomato-front.vercel.app/",
+      "githubUrl": "#",
+      "type": "personal",
+      "showLiveDemo": true,
+      "showSourceCode": true
+    },
+    {
+      "id": 7,
+      "title": "Tasky",
+      "description": "Task management app built during internship, focused on state management and UI/UX.",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
+      "technologies": ["React.js", "JavaScript", "CSS3"],
+      "liveUrl": "https://tasky-gamma.vercel.app/",
+      "githubUrl": "#",
+      "type": "personal",
+      "showLiveDemo": true,
+      "showSourceCode": true
     }
   ],
   "certifications": [
     {
       "id": 1,
-      "name": "React Developer Certification",
-      "issuer": "Meta",
+      "name": "Frontend Developer (React.js)",
+      "issuer": "HackerRank",
       "date": "2023",
-      "credentialUrl": "#"
+      "credentialUrl": "https://www.hackerrank.com/certificates/86c671b0a626"
     },
     {
       "id": 2,
-      "name": "Frontend Web Development",
-      "issuer": "freeCodeCamp",
-      "date": "2022",
-      "credentialUrl": "#"
+      "name": "Problem Solving",
+      "issuer": "HackerRank",
+      "date": "2023",
+      "credentialUrl": "https://www.hackerrank.com/certificates/fe49a6a308c5"
     },
     {
       "id": 3,
-      "name": "JavaScript Algorithms and Data Structures",
-      "issuer": "freeCodeCamp",
-      "date": "2021",
-      "credentialUrl": "#"
+      "name": "Python Language",
+      "issuer": "HackerRank",
+      "date": "2023",
+      "credentialUrl": "https://www.hackerrank.com/certificates/f800b5e71ca0"
+    },
+    {
+      "id": 4,
+      "name": "Java Script Language",
+      "issuer": "HackerRank",
+      "date": "2023",
+      "credentialUrl": "https://www.hackerrank.com/certificates/75a7f23b378f"
     }
   ]
 }

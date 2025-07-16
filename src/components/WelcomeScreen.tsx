@@ -27,8 +27,8 @@ const WelcomeScreen = ({ onComplete }: WelcomeScreenProps) => {
       <div className="text-center animate-fade-in">
         <div className="relative mb-8">
           <img
-            src={portfolioData.personal.avatar}
-            alt={portfolioData.personal.name}
+            src="/vijay-reddy.png"
+            alt="Vijay Reddy"
             className="w-32 h-32 rounded-full mx-auto shadow-2xl animate-scale-in"
           />
           <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-400 rounded-full border-4 border-white animate-pulse"></div>
