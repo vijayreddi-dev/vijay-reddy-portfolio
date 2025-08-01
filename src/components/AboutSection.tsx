@@ -25,7 +25,7 @@ const AboutSection = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-800">{portfolioData.personal.title}</h3>
-                <p className="text-gray-600">2.5+ Years Experience</p>
+                <p className="text-gray-600">{portfolioData.personal.totalExperience} Years Experience</p>
               </div>
             </div>
           </div>
@@ -48,14 +48,14 @@ const AboutSection = () => {
                 
                 <div className="animate-fade-in" style={{ animationDelay: '1.2s' }}>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 relative">
-                    <span className="relative z-10">Vijay Reddy</span>
+                    <span className="relative z-10">{portfolioData.personal.name}</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 via-purple-400/20 to-pink-400/20 blur-lg animate-glow"></div>
                   </h1>
                 </div>
                 
                 <div className="animate-fade-in" style={{ animationDelay: '1.6s' }}>
                   <p className="text-lg md:text-xl text-gray-600 font-medium bg-white/50 backdrop-blur-sm rounded-2xl py-3 px-6 inline-block shadow-lg">
-                    Frontend Developer
+                    {portfolioData.personal.title}
                   </p>
                 </div>
               </div>

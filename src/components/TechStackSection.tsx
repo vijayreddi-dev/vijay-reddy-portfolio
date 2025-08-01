@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import portfolioData from '../data/portfolio.json';
 
@@ -27,17 +26,18 @@ const TechStackSection = () => {
   const getYearsOfExperience = () => {
     const experiences = portfolioData.experience;
     if (!experiences || experiences.length === 0) return 0;
-    // Find the earliest start year
-    const years = experiences.map(exp => {
-      // Try to extract year from duration string (e.g., 'Jan 2023 - Present' or 'Jun 2021 - Sep 2021')
-      const match = exp.duration.match(/(\d{4})/);
-      return match ? parseInt(match[1], 10) : null;
-    }).filter(Boolean);
+    const years = experiences
+      .map(exp => {
+        const match = exp.duration.match(/(\d{4})/);
+        return match ? parseInt(match[1], 10) : null;
+      })
+      .filter(Boolean);
     if (years.length === 0) return 0;
     const minYear = Math.min(...years);
     const now = new Date();
     return now.getFullYear() - minYear + 1;
   };
+
   const yearsOfExperience = portfolioData.personal?.totalExperience || getYearsOfExperience();
 
   return (
@@ -69,8 +69,8 @@ const TechStackSection = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
           {portfolioData.techStack?.map((tech, index) => (
             <div
-              key={tech.name}
-              className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-white/20 ${
+              key={`${tech.name}-${index}`}
+              className={`group relative overflow-hidden bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-white/20 ${
                 isVisible ? 'animate-scale-in' : 'opacity-0'
               }`}
               style={{
@@ -80,7 +80,7 @@ const TechStackSection = () => {
             >
               {/* Gradient background on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-indigo-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
+
               {/* Content */}
               <div className="relative z-10 text-center">
                 <div className="text-3xl md:text-4xl mb-3 group-hover:animate-bounce transition-all duration-300 group-hover:scale-125">
@@ -97,9 +97,9 @@ const TechStackSection = () => {
 
               {/* Animated border */}
               <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-200 transition-colors duration-300"></div>
-              
+
               {/* Shine effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none"></div>
             </div>
           ))}
         </div>
@@ -108,7 +108,6 @@ const TechStackSection = () => {
         <div className="mt-16 relative h-20 overflow-hidden rounded-2xl bg-white/30 backdrop-blur-sm border border-white/20">
           <div className="absolute inset-0 flex items-center">
             <div className="flex animate-scroll-infinite space-x-8 whitespace-nowrap">
-              {/* First set */}
               {portfolioData.techStack?.map((tech, index) => (
                 <div key={`scroll-1-${index}`} className="flex items-center space-x-2 text-gray-700 font-medium">
                   <span className="text-2xl" style={{ display: 'inline-block', minWidth: 32, minHeight: 32 }}>
@@ -121,7 +120,6 @@ const TechStackSection = () => {
                   <span className="text-lg">{tech.name}</span>
                 </div>
               ))}
-              {/* Duplicate for seamless loop */}
               {portfolioData.techStack?.map((tech, index) => (
                 <div key={`scroll-2-${index}`} className="flex items-center space-x-2 text-gray-700 font-medium">
                   <span className="text-2xl" style={{ display: 'inline-block', minWidth: 32, minHeight: 32 }}>
@@ -136,7 +134,7 @@ const TechStackSection = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Gradient overlays */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white/80 to-transparent z-10"></div>
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white/80 to-transparent z-10"></div>

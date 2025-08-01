@@ -1,10 +1,10 @@
 {
   "personal": {
     "name": "Vijay Reddy",
-    "title": "Frontend Developer",
+    "title": "Full-Stack Developer",
     "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
     "welcomeMessage": "Hello! I'm a passionate frontend developer who creates dynamic and responsive web applications.",
-    "about": "Frontend Developer with 2.5+ years of experience specializing in React.js, JavaScript, HTML, and CSS. Proven track record delivering real-time projects in domains like travel, hotel booking, employee management, and compliance platforms.",
+    "about": "Full Stack Developer with 2.7+ years of experience building scalable, production-ready web applications. Specialized in React.js and TypeScript for frontend development, with backend proficiency in Node.js and PostgreSQL. Experienced in deploying applications using AWS services (S3, EC2, CodePipeline). Delivered real-time projects across domains like travel, HR, hotel booking, and compliance, focusing on clean architecture, performance, and automation.",
     "email": "padegapativijay@gmail.com",
     "phone": "+91 9010498408",
     "location": "Pune, India",
@@ -14,18 +14,72 @@
     "totalExperience": "2.7+"
   },
   "techStack": [
-    { "name": "React.js", "icon": "/react.svg" },
-    { "name": "JavaScript", "icon": "/JavaScript.svg" },
-    { "name": "TypeScript", "icon": "/typescript.svg" },
-    { "name": "NestJS", "icon": "/nestjs.svg" },
-    { "name": "PostgreSQL", "icon": "/postgresql.svg" },
-    { "name": "Git", "icon": "/git.svg" },
-    { "name": "Postman", "icon": "/postman.svg" },
-    { "name": "HTML5", "icon": "/html-5.svg" },
-    { "name": "CSS3", "icon": "/css.svg" },
-    { "name": "SCSS", "icon": "/sass.svg" },
-    { "name": "Bootstrap", "icon": "/bootstrap.svg" },
-    { "name": "Material UI", "icon": "/materialUI.svg" }
+    {
+      "name": "React.js",
+      "icon": "/react.svg"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "/JavaScript.svg"
+    },
+    {
+      "name": "Material UI",
+      "icon": "/materialUI.svg"
+    },
+    {
+      "name": "Redux",
+      "icon": "/redux.svg"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "/tailwindcss.svg"
+    },
+    {
+      "name": "NestJS",
+      "icon": "/nestjs.svg"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "/postgresql.svg"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "/typescript.svg"
+    },
+    {
+      "name": "Postman",
+      "icon": "/postman.svg"
+    },
+    {
+      "name": "Git",
+      "icon": "/git.svg"
+    },
+    {
+      "name": "CI CD",
+      "icon": "/ci-cd.svg"
+    },
+    {
+      "name": "AWS",
+      "icon": "/aws.svg"
+    }
+  ],
+  "ExtraSkills": [
+    {
+      "name": "HTML5",
+      "icon": "/html-5.svg"
+    },
+    {
+      "name": "CSS3",
+      "icon": "/css.svg"
+    },
+    {
+      "name": "SCSS",
+      "icon": "/sass.svg"
+    },
+    {
+      "name": "Bootstrap",
+      "icon": "/bootstrap.svg"
+    }
   ],
   "experience": [
     {
@@ -34,7 +88,12 @@
       "position": "Software Engineer",
       "duration": "Jan 2023 - Present",
       "description": "Leading frontend development for real-time projects in travel, compliance, and employee management. Handling client interactions, forming user stories, developing screens, and supporting backend tasks.",
-      "technologies": ["React.js", "JavaScript", "SQL", "MongoDB"]
+      "technologies": [
+        "React.js",
+        "JavaScript",
+        "SQL",
+        "MongoDB"
+      ]
     },
     {
       "id": 2,
@@ -42,7 +101,12 @@
       "position": "Software Engineer Intern",
       "duration": "Jun 2021 - Sep 2021",
       "description": "Built and deployed Zomato frontend clone, developed Tasky task management app, and participated in full-stack assignments to gain practical frontend and backend experience.",
-      "technologies": ["React.js", "JavaScript", "HTML5", "CSS3"]
+      "technologies": [
+        "React.js",
+        "JavaScript",
+        "HTML5",
+        "CSS3"
+      ]
     }
   ],
   "projects": [
@@ -51,7 +115,12 @@
       "title": "Avery (SurgeVentures)",
       "description": "Compliance platform that helps over 50 organizations meet business regulations, led frontend development, and improved delivery time by 30%.",
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      "technologies": ["React.js", "TypeScript", "NestJS","PostgreSQL"],
+      "technologies": [
+        "React.js",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL"
+      ],
       "liveUrl": "#",
       "githubUrl": "#",
       "type": "real-time",
@@ -63,7 +132,10 @@
       "title": "Jackeye",
       "description": "Portal for agents to securely manage credentials, reduced login time by 40% and improved booking efficiency by 25%.",
       "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
-      "technologies": ["React.js", "JavaScript"],
+      "technologies": [
+        "React.js",
+        "JavaScript"
+      ],
       "liveUrl": "#",
       "githubUrl": "#",
       "type": "real-time",
@@ -75,7 +147,10 @@
       "title": "Techforops",
       "description": "Developed amendment and monitoring screens to enhance agent workflow and reduce incorrect assignments by 25%.",
       "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
-      "technologies": ["React.js", "JavaScript"],
+      "technologies": [
+        "React.js",
+        "JavaScript"
+      ],
       "liveUrl": "#",
       "githubUrl": "#",
       "type": "real-time",
@@ -87,7 +162,10 @@
       "title": "Arena9",
       "description": "Frontend for Employee Management System tracking over 500 employees, improved UI satisfaction by 15%.",
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      "technologies": ["React.js", "JavaScript"],
+      "technologies": [
+        "React.js",
+        "JavaScript"
+      ],
       "liveUrl": "#",
       "githubUrl": "#",
       "type": "real-time",
@@ -99,7 +177,11 @@
       "title": "Zomato Frontend Clone",
       "description": "Built during internship to enhance skills in React.js and responsive design.",
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      "technologies": ["React.js", "JavaScript", "CSS3"],
+      "technologies": [
+        "React.js",
+        "JavaScript",
+        "CSS3"
+      ],
       "liveUrl": "https://zomato-front.vercel.app/",
       "githubUrl": "#",
       "type": "personal",
@@ -111,7 +193,11 @@
       "title": "Tasky",
       "description": "Task management app built during internship, focused on state management and UI/UX.",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
-      "technologies": ["React.js", "JavaScript", "CSS3"],
+      "technologies": [
+        "React.js",
+        "JavaScript",
+        "CSS3"
+      ],
       "liveUrl": "https://tasky-gamma.vercel.app/",
       "githubUrl": "#",
       "type": "personal",
