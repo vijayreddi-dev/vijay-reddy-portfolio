@@ -9,7 +9,6 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 const queryClient = new QueryClient();
 
 const App = () => {
-  console.log('App rendering, NODE_ENV:', process.env.NODE_ENV);
 
   return (
     <div>
