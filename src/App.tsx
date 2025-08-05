@@ -14,7 +14,6 @@ const App = () => {
 
   return (
     <div>
-      <SpeedInsights />
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
@@ -31,6 +30,7 @@ const App = () => {
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
+      <SpeedInsights />
     </div>
   );
 };
