@@ -4,14 +4,14 @@
     "title": "Full-Stack Developer",
     "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
     "welcomeMessage": "Hello! I'm a passionate frontend developer who creates dynamic and responsive web applications.",
-    "about": "Full Stack Developer with 2.7+ years of experience building scalable, production-ready web applications. Specialized in React.js and TypeScript for frontend development, with backend proficiency in Node.js and PostgreSQL. Experienced in deploying applications using AWS services (S3, EC2, CodePipeline). Delivered real-time projects across domains like travel, HR, hotel booking, and compliance, focusing on clean architecture, performance, and automation.",
+    "about": "Full Stack Developer with 3+ years of experience building scalable, production-ready web applications. Specialized in React.js and TypeScript for frontend development, with backend proficiency in Node.js and PostgreSQL. Experienced in deploying applications using AWS services (S3, EC2, CodePipeline). Delivered real-time projects across domains like travel, HR, hotel booking, and compliance, focusing on clean architecture, performance, and automation.",
     "email": "padegapativijay@gmail.com",
     "phone": "+91 9010498408",
     "location": "Pune, India",
     "github": "https://github.com/vijayreddi",
     "linkedin": "https://www.linkedin.com/in/vijay-reddy-padegapati-12122001vj/",
     "portfolio": "https://zomato-front.vercel.app/",
-    "totalExperience": "2.7+"
+    "totalExperience": "3+"
   },
   "techStack": [
     {
